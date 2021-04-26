@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "0.1",
+	"FriendlyName": "VRHand",
+	"Description": "A simple set of classes to help setting up hands with Motion controllers",
+	"Category": "Code",
+	"CreatedBy": "MadMcCrow",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "VRHand",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
