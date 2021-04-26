@@ -52,7 +52,7 @@ struct VRHAND_API FVRHandKeyMapping
 USTRUCT(BlueprintType, Category="VRHand")
 struct VRHAND_API FVRHandHandInfo
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 
 public:
 

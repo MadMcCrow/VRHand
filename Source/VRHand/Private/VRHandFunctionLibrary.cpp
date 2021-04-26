@@ -28,9 +28,18 @@ TMap<EControllerHand, FVRHandHandInfo> UVRHandFunctionLibrary::GetPlayerVRHands(
 
 FVRHandHandInfo UVRHandFunctionLibrary::GetPlayerVRHandStatus(const class APlayerController* Player, EControllerHand Hand)
 {
-     if (auto VRSS = GetPlayerVRHandSubsystem(Player))
+    if (auto VRSS = GetPlayerVRHandSubsystem(Player))
     {
         return VRSS->GetHandStatus(Hand);
     }
     return FVRHandHandInfo();
+}
+
+float UVRHandFunctionLibrary::GetPlayerVRHandFinger(const class APlayerController* Player, EControllerHand Hand, EHandFingers Finger)
+{
+    if (auto VRSS = GetPlayerVRHandSubsystem(Player))
+    {
+        return VRSS->GetHandStatus(Hand)[Finger];
+    }
+    return 0.f;
 }
