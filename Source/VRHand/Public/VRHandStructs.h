@@ -91,7 +91,30 @@ public:
 		case EHandFingers::Grip	   	:
 		{
 			if (const float* value = FingersCloseStatus.Find(EHandFingers::Grip))
+			{
 				return *value;
+			}
+			else // fallback to mean between other fingers
+			{
+				float mean = 0.f; 
+				int32 count = 0;
+				if (const float* Middle = FingersCloseStatus.Find(EHandFingers::Middle))
+				{
+					mean += *Middle;
+					count++;
+				}
+				if (const float* Ring = FingersCloseStatus.Find(EHandFingers::Ring))
+				{
+					mean += *Ring;
+					count++;
+				}
+				if (const float* Pinky = FingersCloseStatus.Find(EHandFingers::Pinky))
+				{
+					mean += *Pinky;
+					count++;
+				}
+				return mean / count;
+			}
 		}
 		break;
 		default:

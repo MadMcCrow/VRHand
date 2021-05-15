@@ -2,14 +2,17 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
-#include "Modules/ModuleManager.h"
+#include "VRHand.h"
 
-class VRHandModule : public IModuleInterface
+
+/** IModuleInterface implementation */
+void VRHandModule::StartupModule()
 {
-public:
+    IModuleInterface::StartupModule();
+}
 
-	/** IModuleInterface implementation */
-	virtual void StartupModule() override;
-	virtual void ShutdownModule() override;
-};
+void VRHandModule::ShutdownModule()
+{
+    IModuleInterface::ShutdownModule();
+}
+
